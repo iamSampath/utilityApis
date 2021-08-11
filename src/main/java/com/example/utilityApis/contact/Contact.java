@@ -1,6 +1,23 @@
 package com.example.utilityApis.contact;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Contact {
+
+
+    @Id
+    @SequenceGenerator(
+            name = "contact_sequence",
+            sequenceName = "contact_sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "contact_sequence"
+    )
 
     private Long id;
     private String name;
@@ -11,13 +28,11 @@ public class Contact {
 
 
     public Contact() {
-
+      // default constructor
     }
 
-
-    //Constructor
-    public Contact(Long id, String name, String email, String phone, String city) {
-        this.id = id;
+    // Parameterized Constructor
+    public Contact(String name, String email, String phone, String city) {
         this.name = name;
         this.email = email;
         this.phone = phone;
