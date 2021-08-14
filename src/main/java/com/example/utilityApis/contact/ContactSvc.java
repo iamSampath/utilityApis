@@ -16,6 +16,10 @@ public class ContactSvc {
 
     private final UtilityDataRepository utilityDataRepository;
 
+    public void addContact(Contact contact) {
+        utilityDataRepository.save(contact);
+    }
+
     @GetMapping
     public List<Contact> getContacts() {
         return utilityDataRepository.findAll();
