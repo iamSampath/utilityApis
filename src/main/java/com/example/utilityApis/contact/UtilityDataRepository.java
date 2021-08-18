@@ -9,4 +9,10 @@ import java.util.Optional;
 @Repository
 public interface UtilityDataRepository extends JpaRepository<Contact, Long> {
 
-    }
+    @Query("SELECT c FROM Contact c WHERE c.email = ?1")
+    Optional<Contact> findContactByEmail(String email);
+
+
+    @Query("SELECT c FROM Contact c WHERE c.phone = ?1")
+    Optional<Contact> findContactByPhone(String phone);
+}
