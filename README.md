@@ -1,6 +1,7 @@
 # utilityApis
 
-These Apis are general purpose Apis for some simple Applications like contact book.
+These Apis are general purpose Apis for some simple Applications like retrieve data, insert the data to db and update the data.
+
 Forking instructions:
 I am keeping the code simple so that it can also be useful for someone who is more interested in learning about the api
 
